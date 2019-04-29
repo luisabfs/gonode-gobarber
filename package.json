@@ -1,5 +1,17 @@
 {
-  "dependencies": {},
+  "name": "gobarber",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/luisabfs/gobarber.git",
+  "author": "Luísa Barros <qlullyq@gmail.com> (https://luisabfs.github.io/)",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon src/index.js"
+  },
+  "dependencies": {
+    "express": "^4.16.4",
+    "nunjucks": "^3.2.0"
+  },
   "devDependencies": {
     "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^13.1.0",
