@@ -1,6 +1,7 @@
 const express = require('express');
 const nunjucks = require('nunjucks');
 const path = require('path');
+const routes = require('./routes');
 
 class App {
   constructor() {
@@ -29,7 +30,7 @@ class App {
   }
 
   routes() {
-    this.express.use(require('./routes'));
+    this.express.use(routes);
   }
 }
 
