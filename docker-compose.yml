@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+  gobarber-database:
+    image: postgres:9.6
+    environment:
+      POSTGRES_PASSWORD: docker
+      POSTGRES_USER: docker
+      POSTGRES_DB: gobarber
+    ports:
+      - "5432:5432"
+    volumes:
+      - gobarberdb:/var/lib/postgresql/data
+
+volumes:
+  gobarberdb:
+    driver: local
