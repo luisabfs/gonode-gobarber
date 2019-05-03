@@ -15,27 +15,23 @@
       <input type="text" class="flatpickr" placeholder="Choose a date" />
 
       <div id="hours">
-      <label>
-        <input type="radio" />
-        12:00
-      </label>
-      <label>
-        <input type="radio" />
-        12:00
-      </label>
-      <label>
-        <input type="radio" />
-        12:00
-      </label>
-    </div>
-    <button type="submit">Schedule</button>
+      </div>
+
+      <button type="submit">Schedule</button>
     </form>
   </div>
 
   <script type="text/javascript">
     flatpickr('.flatpickr', {
-      minDate: new Date(),s
-      dateFormat: 'd/m/Y'
-    });
+      minDate: new Date(),
+      dateFormat: 'd/m/Y',
+      onChange: function(date) {
+        fetch(`/app/available/{{ provider.id }}?date=${date[0].getTime()}`).then(function(response) {
+          response.text().then(function(html) {
+            document.getElementById('hours').innerHTML = html
+          })
+        })
+      }
+    })
   </script>
 {% endblock %}
