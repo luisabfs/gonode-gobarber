@@ -16,6 +16,11 @@
         </li>
       {% endfor %}
     </ul>
+
+    {% if (user.provider === true) %}
+      <a href="/app/schedule" class="logout">Appointments</a>
+    {% endif %}
+
     <a href="/app/logout" class="logout">Logout</a>
   </div>
 {% endblock %}
