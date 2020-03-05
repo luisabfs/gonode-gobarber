@@ -2,8 +2,6 @@
 
 > Node.js application for a fictional barber shop
 
-![alt text](src/public/images/print.png)
-
 ## Main functionalities
 
 - Login and authentication
